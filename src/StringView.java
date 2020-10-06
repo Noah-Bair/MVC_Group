@@ -12,6 +12,10 @@ public class StringView extends JFrame {
 	private JTextField rString = new JTextField(10);
 	public static JButton reverseButton = new JButton("Reverse");
 	private JTextField reverseDisplay = new JTextField(10);
+	
+	private JTextField pString = new JTextField(10);
+	public static JButton pButton = new JButton("Palindrome?");
+	private JTextField pOut = new JTextField(10);
 
 	StringView() {
 		JPanel mainView = new JPanel();
@@ -28,6 +32,10 @@ public class StringView extends JFrame {
 		mainView.add(rString);
 		mainView.add(reverseButton);
 		mainView.add(reverseDisplay);
+		
+		mainView.add(pString);
+		mainView.add(pButton);
+		mainView.add(pOut);
 
 		this.add(mainView);
 	}
@@ -62,5 +70,17 @@ public class StringView extends JFrame {
 
 	void reverseListening(ActionListener listenForReverse) {
 		reverseButton.addActionListener(listenForReverse);
+	}
+	
+	public String getPString() {
+		return pString.getText();
+	}
+	
+	public void palindrome(String pStr) {
+		pOut.setText(pStr);
+	}
+	
+	void palindromeListening(ActionListener listenForPal) {
+		pButton.addActionListener(listenForPal);
 	}
 }

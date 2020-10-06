@@ -1,6 +1,8 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import StringController.StringListener;
+
 public class StringController {
 	private StringModel model;
 	private StringView view;
@@ -11,6 +13,7 @@ public class StringController {
 
 		this.view.combineListening(new StringListener());
 		this.view.reverseListening(new StringListener());
+		this.view.palindromeListening(new StringListener());
 	}
 
 	class StringListener implements ActionListener {
@@ -28,6 +31,10 @@ public class StringController {
 				secondString = view.getSecondString();
 				model.StringCombine(firstString, secondString);
 				view.combine(model.string_combined);
+			}
+			else if (event.getSource() == StringView.pButton) {
+				pString = view.getPString();
+				view.palindrome(model.palindrome(pString));
 			}
 		}
 	}

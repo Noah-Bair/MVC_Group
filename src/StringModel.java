@@ -4,7 +4,6 @@ public class StringModel {
 	StringBuilder input1 = new StringBuilder();
 
 	public void StringCombine(String firstString, String secondString) {
-
 		string_combined = firstString + " " + secondString;
 	}
 
@@ -21,5 +20,13 @@ public class StringModel {
 
 	public String reverse() {
 		return string_reverse;
+	}
+	
+	public String palindrome(String pString) {
+		int len = pString.length();
+		for (int i = 0; i < len; i++) {
+			if (pString.charAt(i) != pString.charAt(len-i-1)) return "Not a palindrome!";
+		}
+		return "Palindrome!";
 	}
 }
