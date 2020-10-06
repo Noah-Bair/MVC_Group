@@ -3,4 +3,5 @@
 This application allows for multiple string operations; including:
 
 - Combining a string
-- Reversing a string 
+- Reversing a string
+- Check string for palindrome 
